@@ -3,6 +3,15 @@ import './home.scss';
 import topBox from '../../components/topBox/TopBox';
 import TopBox from '../../components/topBox/TopBox';
 import ChartBox from '../../components/chartBox/ChartBox';
+import {
+  barChartBoxRevenue,
+  barChartBoxVisit,
+  chartBoxConversion,
+  chartBoxProduct,
+  chartBoxRevenue,
+  chartBoxUser,
+} from '../../data';
+import BarChartBox from '../../components/barChartBox/BarChartBox';
 
 function Home() {
   return (
@@ -11,21 +20,25 @@ function Home() {
         <TopBox />
       </div>
       <div className="box box2">
-        <ChartBox />
+        <ChartBox {...chartBoxUser} />
       </div>
       <div className="box box3">
-        <ChartBox />
+        <ChartBox {...chartBoxProduct} />
       </div>
-      <div className="box box4">
-        <ChartBox />
-      </div>
+      <div className="box box4"></div>
       <div className="box box5">
-        <ChartBox />
+        <ChartBox {...chartBoxConversion} />
       </div>
-      <div className="box box6">Boax6</div>
+      <div className="box box6">
+        <ChartBox {...chartBoxRevenue} />
+      </div>
       <div className="box box7">Boax7</div>
-      <div className="box box8">Boax8</div>
-      <div className="box box9">Boax9</div>
+      <div className="box box8">
+        <BarChartBox {...barChartBoxVisit} />
+      </div>
+      <div className="box box9">
+        <BarChartBox {...barChartBoxRevenue} />
+      </div>
     </div>
   );
 }
